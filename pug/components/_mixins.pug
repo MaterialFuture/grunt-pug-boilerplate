@@ -1,0 +1,88 @@
+//-
+//- TYPE MIXINS
+//-
+
+//- HERO STACK
+mixin heroStack(line1, line2, line3, line4, line5)
+	span(class!=attributes.c1, style!=attributes.s1 )= line1
+	span(class!=attributes.c2, style!=attributes.s2 )= line2
+	span(class!=attributes.c3, style!=attributes.s3 )= line3
+	span(class!=attributes.c4, style!=attributes.s4 )= line4
+	span(class!=attributes.c5, style!=attributes.s5 )= line5
+
+
+//- STARTING AT
+mixin startingAt(line1, line2, line3, line4, dollars, cents)
+	span(class!=attributes.c1)= line1
+	span(class!=attributes.c2)= line2
+	span(class!=attributes.c3)= line3
+	span(class!=attributes.c4)= line4
+	span.price
+		span.best
+			sup $
+			span= dollars
+			sup= cents
+
+
+//- UP TO
+mixin upTo(line1, line2, line3, line4)
+	span(class!=attributes.c1, style!=attributes.s1)= line1
+	span(class!=attributes.c2, style!=attributes.s2)= line2
+	span(class!=attributes.c3, style!=attributes.s3)= line3
+	span(class!=attributes.c4, style!=attributes.s4)= line4
+
+
+//- MALLORY CONDENSED
+mixin malloryCondensed()
+	style
+		| @font-face {
+		| 	font-family: 'mallory-condensed';
+		| 	src: url('xxxx/MalloryCond-Black.woff') format('woff');
+		| 	font-style: normal;
+		| 	font-weight: 900;
+		| }
+
+
+//- IMG
+mixin img(src, alt)
+	.img-outer(class!=attributes.class, style!=attributes.style): img(src=src, alt=alt).img-fluid
+
+
+//- LINK
+mixin link(href, loc, id)
+	a(class!=attributes.class, id!=attributes.id, href=href, data-ta-intcmp="1", data-ta-intcmp-loc=loc, data-ta-intcmp-id=id)
+		if block
+			block
+		else
+			b FIX ME
+
+
+//- BOXY CATEGORY
+mixin boxyCategory(href, img, name, loc, id)
+	+link(href, loc, id).boxy-category.flex.promo-boxy-gray.t-cond
+		+img(img)
+		.name= name
+
+
+//- TABBED PANEL
+mixin tabbedPanel(id)
+	.tabbed__panel(id=id, tabindex="-1")
+
+//-
+//- Content Mixin Blocks
+//-
+
+//- 19020 Section (Banner)
+mixin section(id)
+	section.story(id=id)
+		block
+
+
+mixin section-fw(id, s1, s2)
+	+section(id).child-cross-center.flex.m-t2.m-b2.p-t2.p-b2.p-l1.p-r1.stack
+		h3.heading__up-to().z-text-align-center
+			+upTo(s1, s2)(c1='t-ultra', s2="font-family:'mallory-condensed' !important;")
+		if block
+			block
+		else
+			p No content provided

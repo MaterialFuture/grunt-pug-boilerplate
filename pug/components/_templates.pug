@@ -1,0 +1,54 @@
+//- Testing out template Ideas to make building pages faster and to keep styling somewhat uniform.
+
+mixin hero(id, textcolor, line1, line2, sub1)
+  section(id=id).story.child-cross-center.flex.p-t2.p-b2.stack.bg-blue.p-l_5.p-r_5
+    h2(class=textcolor).heading__hero.z-text-align-center
+      span.t-cond(style='font-size: 2.5em') line1
+      span.t-cond(style='font-size: 2.5em') line2
+      span.t-ultra(style='font-size: 4em;') sub1
+    if block
+      block
+    else
+      p No content provided
+
+
+mixin button-row-5
+  .btn-container.flex.m-t1.p-_5.stack.unstack-768.mxw-1024(style='width:100%')
+    //- Btns
+    a.grow.m-_5.t-cond.z-btn.z-btn-ghost-white(href=heroBtn1URL, data-ta-intcmp='1', data-ta-intcmp-loc=heroBtn1LOC, data-ta-intcmp-id=heroBtn1ID) xxxx
+    a.grow.m-_5.t-cond.z-btn.z-btn-ghost-white(href=heroBtn2URL, data-ta-intcmp='1', data-ta-intcmp-loc=heroBtn2LOC, data-ta-intcmp-id=heroBtn2ID) xxxx
+    a.grow.m-_5.t-cond.z-btn.z-btn-ghost-white(href=heroBtn3URL, data-ta-intcmp='1', data-ta-intcmp-loc=heroBtn3LOC, data-ta-intcmp-id=heroBtn3ID) xxxx
+    a.grow.m-_5.t-cond.z-btn.z-btn-ghost-white(href=heroBtn4URL, data-ta-intcmp='1', data-ta-intcmp-loc=heroBtn4LOC, data-ta-intcmp-id=heroBtn4ID) xxxx
+    a.grow.m-_5.t-cond.z-btn.z-btn-ghost-white(href=heroBtn5URL, data-ta-intcmp='1', data-ta-intcmp-loc=heroBtn5LOC, data-ta-intcmp-id=heroBtn5ID) xxxx
+
+
+mixin btn-white(name)
+  a.grow.m-_5.t-cond.z-btn.z-btn-ghost-white&attributes(attributes)= name
+mixin btn-red(name)
+  .grow.m-_5.t-cond.z-btn.bg-red.t-white&attributes(attributes)= name
+mixin btn-blue(name)
+  .grow.m-_5.t-cond.z-btn.bg-blue.t-white&attributes(attributes)= name
+
+//- Example
++btn-white('btn-name')(href=heroBtn1URL, data-ta-intcmp='1', data-ta-intcmp-loc=heroBtn1LOC, data-ta-intcmp-id=heroBtn1ID)
+//- You can reference stuff from the variable sheet within the mixin with &attributes
+
+.btn-container.flex.m-t1.p-_5.stack.unstack-768.mxw-1024(style='width:100%')
+  //- Btns
+
+
+//- Full-width promo
+mixin fw-promo(id, line1, line2, line3, btn1)
+  section(id=id).story.m-t1.m-b1
+  	a.p-t2.p-r1.p-b2.p-l1.show-block.story.z-text-align-center(href=huntingURL, data-ta-intcmp='1', data-ta-intcmp-loc=huntingLOC, data-ta-intcmp-id=huntingID)
+  		h3.heading__up-to.t-white
+  			span.t-cond(style='font-size:1.5em') line1
+  			span.t-ultra(style='font-size:3em') line2
+  			span.t-cond(style='font-size:1.5em') line3
+  		if block
+        block
+      else
+        br
+      span.m-t1.t-cond.z-btn.z-btn-ghost-white(style='width:100%;max-width:18em;') btn1
+
+//- 
