@@ -1,7 +1,7 @@
 {
   "name": "academy.dev.boilerplate",
-  "version": "0.5.1",
-  "description": "Boilerplate for creating pages, with all the tools you will need, including nightwatch testing, Sass compiling. No Image Optimization",
+  "version": "0.6.3",
+  "description": "Boilerplate for creating pages, with all the tools you will need, including nightwatch testing, Sass compiling.",
   "author": "Konstantine Vogiantzis",
   "scripts": {
     "nw": "node_modules/.bin/nightwatch --config nightwatch.conf.BASIC.js",

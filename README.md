@@ -65,3 +65,9 @@ git pull upstream master
 ### 4\. Developing
 Setup your npm env: `npm install`
 Grunt will handle all the things you need for developing. Run grunt by using: `grunt -v`
+
+
+
+### Notes
+
+Added in extra dependancies. If you need to take them out, just remove from package.json. I wanted this to be a tool that can be modular and made for different types of projects. Note also that this is intended for static sites, how you serve it is up to you.
