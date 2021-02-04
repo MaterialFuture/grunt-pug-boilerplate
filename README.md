@@ -1,3 +1,6 @@
+## Update - 2021
+This project will be read-only as it's fallen so far behind grunt/pug/npm that it's not even usable to the extent that it was meant to be. The intent was to showcase something I created for a specific usecase, not to create something that someone else could use.
+
 # Pug Grunt Boilerplate
 This is, as the name suggests, a Boilerplate template for the Pug/Jade html templating, and the grunt task runner for automating tasks and such. This is what I use personally for getting up and running faster when there's an existing backend to host and serve content (FTP).
 
